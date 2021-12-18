@@ -170,7 +170,7 @@ def dest_path(root_folder: str, path: str) -> str:
 def path_from_datetime(root_folder: str, dt: datetime.datetime,
                        path: str) -> str:
     folder = folder_from_datetime(dt)
-    filename = filename_from_datetime(dt, path)
+    filename= filename_from_file(path)
     return os.path.join(root_folder, folder, filename)
 
 
@@ -186,6 +186,9 @@ def filename_from_datetime(dt: datetime.datetime, path: str) -> str:
     ext = os.path.splitext(path)[1]
     return base + ext.lower()
 
+def filename_from_file(path: str) -> str:
+    """Returns original basename + original extension"""
+    return os.path.basename(path)
 
 def basename_from_datetime(dt: datetime.datetime) -> str:
     """
