@@ -198,6 +198,7 @@ def creation_date(path: str) -> datetime.datetime:
     exif_date = exif_creation_date(path)
     if exif_date:
         return exif_date
+    logger.debug("exif_date not found. Using fallback mtime", path)
     return file_creation_date(path)
 
 
