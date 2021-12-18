@@ -175,7 +175,7 @@ def path_from_datetime(root_folder: str, dt: datetime.datetime,
 
 
 def folder_from_datetime(dt: datetime.datetime) -> str:
-    return dt.strftime('%Y' + os.sep + '%Y-%m')
+    return dt.strftime('%Y' + os.sep + '%m' + os.sep + '%d')
 
 
 def filename_from_datetime(dt: datetime.datetime, path: str) -> str:
